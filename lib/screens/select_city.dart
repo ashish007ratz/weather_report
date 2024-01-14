@@ -108,7 +108,7 @@ class _SelectCityState extends State<SelectCity> {
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Text(
-                            'Select',
+                            'View Weather',
                             style: TextStyle(fontSize: 20, color: isButtonEnabled ? Colors.white : Colors.grey[800]),
                           ),
                         ),

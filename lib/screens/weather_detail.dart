@@ -33,11 +33,14 @@ class _WeatherDetailState extends State<WeatherDetail> {
           if (state is WeatherLoadingState) {
             return Center(child: CircularProgressIndicator());
           } else if (state is WeatherErrorState) {
-            return Center(child: Column(
-              children: [
-                const Text("Error Loading Page",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
-                Text(state.errorMessage, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.grey),),
-              ],
+            return Center(child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  const Text("Error Loading Page",style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
+                  Text(state.errorMessage, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.grey),),
+                ],
+              ),
             ));
           } else if (state is WeatherLoadedState) {
             final Weather weather = state.weather;
